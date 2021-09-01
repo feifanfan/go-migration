@@ -1,4 +1,4 @@
-module go-migration
+module github.com/feifanfan/go-migration
 
 go 1.17
 
