@@ -29,8 +29,16 @@ func TestSchemaBuilder_GetConn(t *testing.T) {
 	})
 	//修改表字段
 	connector.Schema().Table("test_num", func(table IBlueprint) {
-		//table.String("username").Comment("测试备注").Change()
+		table.String("username").Comment("测试备注").Change()
 		table.String("created_time").RenameColumn("created_at")
+		table.String("username").Drop()
 	})
+	CreateXxxTable(connector.Schema())
+}
 
+//创建Xxx数据表
+func CreateXxxTable(schema ISchemaBuilder)  {
+	schema.CreateTable("Xxx", func(table IBlueprint) {
+
+	})
 }
